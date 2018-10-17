@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { movies } from './movies/shared/movie.mock-data';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-movies',
+  template:
+    `<app-nav-bar></app-nav-bar>
+    <app-movie-list></app-movie-list>`
 })
-export class AppComponent {
-  title = 'MovieListApp';
+
+export class MoviesAppComponent {
+  movies = movies;
 }

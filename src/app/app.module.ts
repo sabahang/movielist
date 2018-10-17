@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { MoviesAppComponent } from './app.component';
+import { NavBarComponent } from './nav/nav-bar.component';
+import { MovieListComponent } from './movies/movie-list.component';
+import { MovieThumbnailComponent } from './movies/movie-thumbnail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MoviesAppComponent,
+    NavBarComponent,
+    MovieListComponent,
+    MovieThumbnailComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MoviesAppComponent]
 })
 export class AppModule { }
