@@ -5,11 +5,11 @@ import { IMovie } from './shared/movie.model';
 @Component({
   selector: 'app-movie-list',
   template:
-  `<div class="container">
-    <h1>List of Movies</h1>
+  `<div class="container-fluid">
+    <h1 class="my-3 mt-5">List of Movies</h1>
     <hr/>
     <div class="row">
-      <div *ngFor="let movie of movies" class="col-md-4">
+      <div *ngFor="let movie of movies" class="col-lg-4">
         <app-movie-thumbnail [movie]="movie"></app-movie-thumbnail>
       </div>
     </div>
