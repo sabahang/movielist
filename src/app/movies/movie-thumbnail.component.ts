@@ -16,6 +16,7 @@ import { IMovie } from './shared/movie.model';
               <div>Rate: {{movie?.rate}}</div>
               <div>Length: {{movie?.length}}</div>
             </div>
+            <a routerLink="/movies/{{movie?.key}}">Click for info</a>
           </div>
         </div>
       </div>
@@ -26,7 +27,7 @@ import { IMovie } from './shared/movie.model';
 export class MovieThumbnailComponent implements OnInit {
   @Input() movie: IMovie;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
