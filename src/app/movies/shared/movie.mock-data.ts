@@ -1,6 +1,6 @@
-import { genreType } from './movie.model';
+import { genreType, IMovie } from './movie.model';
 
-export const movies: any[] = [
+export const movies: IMovie[] = [
   {
     id: 1,
     key: 'deadpool',

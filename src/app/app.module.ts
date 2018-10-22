@@ -7,6 +7,7 @@ import { MovieListComponent } from './movies/movie-list.component';
 import { MovieThumbnailComponent } from './movies/movie-thumbnail.component';
 import { MovieDetailsComponent } from './movies/movie-details.component';
 import { appRoutes } from './routes';
+import { FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

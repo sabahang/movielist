@@ -2,17 +2,18 @@
   <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name">
 
   <div class="row">
-    <div class="col-md-11">
+    <div class="col-md-12">
       <h2>{{movie?.name | uppercase}} </h2>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div>{{movie?.description}}</div>
         <div>Genres: {{movie?.genres}}</div>
         <div>Rate: {{movie?.rate}}</div>
         <div>Length: {{movie?.length}}</div>
+        <div><a [routerLink]="['/movies']" >Go Back to List</a></div>
     </div>
   </div>
 </div>

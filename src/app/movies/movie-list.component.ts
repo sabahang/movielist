@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { movies } from './shared/movie.mock-data';
 import { IMovie } from './shared/movie.model';
+import { MovieService } from './shared/movieservice.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -19,10 +19,14 @@ import { IMovie } from './shared/movie.model';
 export class MovieListComponent implements OnInit {
   movies: IMovie[];
 
-  constructor() { }
+  constructor(private movieService: MovieService) {
+    this.movieService.changeEmitted$.subscribe(data => {
+      this.movies = data;
+    });
+  }
 
   ngOnInit() {
-    this.movies = movies;
+    // this.movies = this.movieService.getFilteredList();
   }
 
 }

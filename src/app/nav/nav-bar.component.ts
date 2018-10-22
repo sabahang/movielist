@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IMovie } from '../movies/shared/movie.model';
+import { movies } from '../movies/shared/movie.mock-data';
+import { MovieService } from '../movies/shared/movieservice.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,10 +14,17 @@ import { Component, OnInit } from '@angular/core';
   `]
 })
 export class NavBarComponent implements OnInit {
+  foundMovies: IMovie[];
+  searchTerm: String;
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit() {
+  }
+
+  searchMovieTitles(searchTerm: String) {
+    this.movieService.searchMovies(searchTerm);
+    // console.log(filterdMovies);
   }
 
 }

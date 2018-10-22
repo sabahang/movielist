@@ -6,7 +6,6 @@ import { movies } from './movies/shared/movie.mock-data';
   template:
     `
     <app-nav-bar></app-nav-bar>
-    <!-- <app-movie-list></app-movie-list> -->
     <router-outlet></router-outlet>
     `
 })
