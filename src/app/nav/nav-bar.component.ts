@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit {
   }
 
   searchMovieTitles(searchTerm: String) {
-    this.movieService.search(searchTerm);
+    this.movieService.search.emit(searchTerm || '');
   }
 
 }

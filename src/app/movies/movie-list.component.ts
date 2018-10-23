@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IMovie } from './shared/movie.model';
 import { MovieService } from './shared/movieservice.service';
+import { movies } from './shared/movie.mock-data';
 
 @Component({
   selector: 'app-movie-list',
@@ -16,17 +17,26 @@ import { MovieService } from './shared/movieservice.service';
   </div>`,
   styles: []
 })
-export class MovieListComponent implements OnInit {
+export class MovieListComponent implements OnInit, OnDestroy {
+
   movies: IMovie[];
 
   constructor(private movieService: MovieService) {
   }
 
+  ngOnDestroy(): void {
+    this.movieService.search.unsubscribe();
+  }
+
   ngOnInit() {
-    this.movieService.searchClicked.subscribe(
-      filteredList => { this.movies = filteredList; }
+    this.movieService.search.subscribe(
+      searchTerm => {
+        this.movies = movies.filter(
+          movie => movie.name.toLocaleLowerCase().indexOf(searchTerm.toLocaleLowerCase()) > -1
+        );
+      }
     );
-    this.movieService.search('');
+    this.movieService.search.emit('');
   }
 
 }
