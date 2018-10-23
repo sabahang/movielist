@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { movies } from './movie.mock-data';
 import { IMovie } from './movie.model';
 import { Subject, Observable, of } from 'rxjs';
@@ -12,19 +12,12 @@ export class MovieService {
     this.filteredList = movies;
   }
 
-  private emitChangeSource = new Subject<any>();
+  @Output() searchClicked: EventEmitter<IMovie[]> = new EventEmitter();
 
-  changeEmitted$ = this.emitChangeSource.asObservable();
-
-  emitChange(searhTerm: String) {
+  search(searhTerm: String) {
     this.filteredList = movies.filter(
       movie => movie.name.toLocaleLowerCase().indexOf(searhTerm.toLocaleLowerCase()) > -1
     );
-    this.emitChangeSource.next();
+    this.searchClicked.emit(this.filteredList);
   }
-  // getMovies(searhTerm: String): Observable<IMovie[]> {
-  //   return of(movies.filter(
-  //     movie => movie.name.toLocaleLowerCase().indexOf(searhTerm.toLocaleLowerCase()) > -1
-  //   ));
-  // }
 }

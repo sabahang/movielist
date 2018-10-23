@@ -20,13 +20,13 @@ export class MovieListComponent implements OnInit {
   movies: IMovie[];
 
   constructor(private movieService: MovieService) {
-    this.movieService.changeEmitted$.subscribe(data => {
-      this.movies = data;
-    });
   }
 
   ngOnInit() {
-    // this.movies = this.movieService.getFilteredList();
+    this.movieService.searchClicked.subscribe(
+      filteredList => { this.movies = filteredList; }
+    );
+    this.movieService.search('');
   }
 
 }

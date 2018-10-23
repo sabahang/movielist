@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { IMovie } from '../movies/shared/movie.model';
 import { movies } from '../movies/shared/movie.mock-data';
 import { MovieService } from '../movies/shared/movieservice.service';
@@ -14,7 +14,6 @@ import { MovieService } from '../movies/shared/movieservice.service';
   `]
 })
 export class NavBarComponent implements OnInit {
-  foundMovies: IMovie[];
   searchTerm: String;
 
   constructor(private movieService: MovieService) { }
@@ -23,8 +22,7 @@ export class NavBarComponent implements OnInit {
   }
 
   searchMovieTitles(searchTerm: String) {
-    this.movieService.searchMovies(searchTerm);
-    // console.log(filterdMovies);
+    this.movieService.search(searchTerm);
   }
 
 }
