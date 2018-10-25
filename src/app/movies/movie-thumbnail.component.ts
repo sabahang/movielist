@@ -4,14 +4,14 @@ import { IMovie } from './shared/movie.model';
 @Component({
   selector: 'app-movie-thumbnail',
   template: `
-    <div class="container bg-secondary m-3 p-5">
-      <div class="row my-2">
+    <div class="container">
+      <div class="row">
         <div class="media">
-          <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name" class="img-fluid img-thumbnail align-self-start">
+          <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name" class="img-fluid img-thumbnail align-self-center">
           <div class="media-body p-3">
-            <h2>{{movie?.name | uppercase}}</h2>
-            <div>{{movie?.description}}</div>
-            <div class="mt-1">
+            <h4>{{movie?.name | uppercase}}</h4>
+            <div>{{(movie?.description.length > 100) ? (movie?.description | slice:0:100) + '...' : (movie?.description)}}</div>
+            <div class="mt-3">
               <div>Genres: {{movie?.genres}}</div>
               <div>Rate: {{movie?.rate}}</div>
               <div>Length: {{movie?.length}}</div>
