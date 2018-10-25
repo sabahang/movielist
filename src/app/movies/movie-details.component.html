@@ -1,19 +1,18 @@
-<div class="container">
-  <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name">
+<div class="container rounded shadow mt-5 pt-5 h-50 w-70">
 
-  <div class="row">
-    <div class="col-md-12">
-      <h2>{{movie?.name | uppercase}} </h2>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6 col-sm-12 p-5">
+      <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name" class="img-fluid img-thumbnail">
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg">
-        <div>{{movie?.description}}</div>
-        <div>Genres: {{movie?.genres}}</div>
-        <div>Rate: {{movie?.rate}}</div>
-        <div>Length: {{movie?.length}}</div>
-        <div><a [routerLink]="['/movies']" >Go Back to List</a></div>
+    <div class="col-md-6 col-12 p-5">
+      <h2>{{movie?.name | uppercase}}</h2>
+      <div>
+        <p>{{movie?.description}}</p>
+        <p>Genres: {{movie?.genres.join(", ")}}</p>
+        <p>Rate: {{movie?.rate}}</p>
+        <p>Length: {{movie?.length}}</p>
+        <p><a [routerLink]="['/movies']" >Go Back to List</a></p>
+      </div>
     </div>
   </div>
 </div>

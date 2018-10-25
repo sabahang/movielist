@@ -1,6 +1,4 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { IMovie } from '../movies/shared/movie.model';
-import { movies } from '../movies/shared/movie.mock-data';
 import { MovieService } from '../movies/shared/movieservice.service';
 import { Router } from '@angular/router';
 

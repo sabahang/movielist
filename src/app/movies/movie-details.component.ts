@@ -7,7 +7,10 @@ import { movies } from './shared/movie.mock-data';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styles: []
+  styles: [`
+  .container {
+    height: 50%;
+  }`]
 })
 export class MovieDetailsComponent implements OnInit {
   movie: IMovie;

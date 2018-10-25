@@ -10,13 +10,15 @@ import { IMovie } from './shared/movie.model';
           <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name" class="img-fluid img-thumbnail align-self-center">
           <div class="media-body p-3">
             <h4>{{movie?.name | uppercase}}</h4>
-            <div>{{(movie?.description.length > 100) ? (movie?.description | slice:0:100) + '...' : (movie?.description)}}</div>
+            <div class=""><em>
+              {{(movie?.description.length > 100) ? (movie?.description | slice:0:100) + '...' : (movie?.description)}}
+            </em></div>
             <div class="mt-3">
-              <div>Genres: {{movie?.genres}}</div>
-              <div>Rate: {{movie?.rate}}</div>
-              <div>Length: {{movie?.length}}</div>
+              <p>Genres: {{movie?.genres.join(", ")}}</p>
+              <p>Rate: {{movie?.rate}}</p>
+              <p>Length: {{movie?.length}}</p>
             </div>
-            <a routerLink="/movies/{{movie?.key}}">Click for info</a>
+            <p class="text-right"><a routerLink="/movies/{{movie?.key}}">Click for info</a></p>
           </div>
         </div>
       </div>
