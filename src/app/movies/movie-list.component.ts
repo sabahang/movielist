@@ -10,12 +10,15 @@ import { movies } from './shared/movie.mock-data';
     <h1 class="my-3 mt-5">List of Movies</h1>
     <hr/>
     <div class="row">
-      <div *ngFor="let movie of movies" class="col-lg m-5">
+      <div *ngFor="let movie of movies" class="thumb col-sm-12 col-xl-2 rounded shadow m-3 p-3">
         <app-movie-thumbnail [movie]="movie"></app-movie-thumbnail>
       </div>
     </div>
   </div>`,
-  styles: []
+  styles: [`
+    .thumb {
+      min-width: 600px;
+    }`]
 })
 export class MovieListComponent implements OnInit, OnDestroy {
 
