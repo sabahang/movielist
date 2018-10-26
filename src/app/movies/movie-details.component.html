@@ -1,13 +1,13 @@
-<div class="container rounded shadow mt-5 pt-5 h-50 w-70">
+<div class="container rounded shadow mt-5 h-50 w-50">
 
   <div class="row d-flex justify-content-center">
-    <div class="col-md-6 col-sm-12 p-5">
+    <div class="col-lg-6 col-12 p-5 text-center">
       <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name" class="img-fluid img-thumbnail">
     </div>
-    <div class="col-md-6 col-12 p-5">
-      <h2>{{movie?.name | uppercase}}</h2>
+    <div class="col-lg-6 col-12 py-5 mw-100">
+      <h3>{{movie?.name | uppercase}}</h3>
       <div>
-        <p>{{movie?.description}}</p>
+        <p>Synopsis: <em>{{movie?.description}}</em></p>
         <p>Genres: {{movie?.genres.join(", ")}}</p>
         <p>Rate: {{movie?.rate}}</p>
         <p>Length: {{movie?.length}}</p>

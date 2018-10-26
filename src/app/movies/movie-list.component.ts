@@ -7,10 +7,10 @@ import { movies } from './shared/movie.mock-data';
   selector: 'app-movie-list',
   template:
   `<div class="container-fluid m-5">
-    <h1 class="my-3 mt-5">List of Movies</h1>
+    <h1 class="my-3 mt-5 text-center">List of Movies</h1>
     <hr/>
     <div class="row justify-content-center">
-      <div *ngFor="let movie of movies" class="thumb col-sm-12 col-xl-2 rounded shadow m-3 p-3">
+      <div *ngFor="let movie of movies" class="thumb col-sm-12 col-xl-2 rounded shadow m-3 ">
         <app-movie-thumbnail [movie]="movie"></app-movie-thumbnail>
       </div>
     </div>

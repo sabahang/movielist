@@ -8,7 +8,7 @@ import { IMovie } from './shared/movie.model';
       <div class="row">
         <div class="media">
           <img src="../../assets/{{movie?.key}}.jpg" alt="movie?.name" class="img-fluid img-thumbnail align-self-center">
-          <div class="media-body p-3">
+          <div class="media-body p-3 mt-2">
             <h4>{{movie?.name | uppercase}}</h4>
             <div class=""><em>
               {{(movie?.description.length > 100) ? (movie?.description | slice:0:100) + '...' : (movie?.description)}}
